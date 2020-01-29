@@ -6,24 +6,29 @@ import "../assets/img/4geeks.ico";
 //import 'breathecode-dom'; //DOM override to make JS easier to use
 import "../style/index.scss";
 
-const who = ["the dog", "my granma", "his turtle", "my bird"];
-const what = ["eat", "pissed", "crushed", "broked"];
-const when = [
-  "before the class",
-  "right in time",
-  "when I finished",
-  "during my lunch",
-  "while I was praying"
-];
+window.onload = function() {
+  // Define data arrays
+  const who = ["the dog", "my granma", "his turtle", "my bird"];
+  const what = ["eat", "pissed", "crushed", "broked"];
+  const when = [
+    "before the class",
+    "right in time",
+    "when I finished",
+    "during my lunch",
+    "while I was praying"
+  ];
 
-function change() {
-  elem.innerHTML =
+  // Define what a sentence looks like
+  let sentence =
     who[Math.floor(Math.random() * 4)] +
     " " +
     what[Math.floor(Math.random() * 4)] +
     " " +
     when[Math.floor(Math.random() * 5)];
-}
 
-let elem = document.getElementById("excuses");
-setInterval(change, 1000);
+  // Query the span by ID
+  let excuseSpan = document.querySelector("#excuse");
+
+  // Set the span's innerHTML to the sentance
+  excuseSpan.innerHTML = sentence;
+};
